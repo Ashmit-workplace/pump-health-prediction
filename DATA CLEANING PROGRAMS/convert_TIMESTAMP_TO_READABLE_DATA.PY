@@ -20,6 +20,5 @@ def convert_timestamps_in_excels(root_folder):
                     print(f"[✘] Error in {file_path}: {e}")
 
 
-convert_timestamps_in_excels(r"C:/Users/YourUsername/Documents/your-folder")
-
-
+convert_timestamps_in_excels(r"D:\extracted data from JSON file ISI\extracted data\sensor_data")
+                             
