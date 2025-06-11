@@ -19,5 +19,4 @@ def convert_timestamps_in_excels(root_folder):
                 except Exception as e:
                     print(f"[✘] Error in {file_path}: {e}")
 
-# Example usage
-# convert_timestamps_in_excels("C:/Users/YourUsername/Documents/your-folder")
+convert_timestamps_in_excels("C:/Users/YourUsername/Documents/your-folder")
