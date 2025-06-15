@@ -6,7 +6,7 @@ from scipy.signal import detrend
 
 # === CONFIGURATION ===
 bands = [(0, 1), (1, 3), (3, 5), (5, 10)]
-axes = ['x_mps2', 'y_mps2', 'z_mps2']
+axes = ['x_smooth', 'y_smooth', 'z_smooth']  # Use smoothed columns
 
 def fft_features(signal, fs):
     if len(signal) < 8:
@@ -62,12 +62,14 @@ def process_fft_file(input_path):
 def recursive_fft_analysis(root_folder):
     for dirpath, _, filenames in os.walk(root_folder):
         for file in filenames:
-            if file.endswith('.xlsx') and not file.endswith('_fft_features_cleaned.xlsx'):
+            if (
+                file.endswith('_denoised.xlsx') and
+                not file.endswith('_fft_features_cleaned.xlsx')
+            ):
                 full_path = os.path.join(dirpath, file)
                 process_fft_file(full_path)
 
 # === USAGE ===
-# Replace with your root folder path
+# Replace with your actual denoised data root folder
 root_dir = r"D:\extracted data from JSON file ISI\extracted data\data_processing_denoised\sensor_data_cleaned"
 recursive_fft_analysis(root_dir)
-
