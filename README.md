@@ -49,8 +49,8 @@ pump-health-prediction/
 ├── README.md
 ├── requirements.txt                    # Python dependencies
 └── .gitignore                          # Files to exclude from Git versioning
-
-📊 Dataset Files (Required)
+```
+## 📊 Dataset Files (Required)
 
 To run this project, ensure the following directory structure under Data/Raw:
 Data/
@@ -62,21 +62,24 @@ Data/
     ├── Op condition-2/
     └── Op condition-3/
 
-⚙️ Setup & Execution
+## ⚙️ Setup & Execution
 
 1. Clone the Repository
-
+```bash 
 git clone https://github.com/Ashmit-workplace/pump-health-prediction.git
 cd pump-health-prediction
-
+```
 2. Install Dependencies
 
 We recommend creating a virtual environment.
+```bash
 pip install -r requirements.txt
+```
 
 3. Pipeline Execution (Script Order)
 
 Run the scripts in the following order for complete execution:
+```bash
 python Scripts/01_convert_json_to_excel.py
 python Scripts/02_convert_timestamp_date-time.py
 python Scripts/03_convert_g_mps2.py
@@ -92,20 +95,21 @@ python Scripts/12_outlier_classification_02.py
 python Scripts/13_outlier_classification_03.py
 python Scripts/14_FFT_feature.py
 python Scripts/15_final_score_label.py
+```
 
 This will generate fully preprocessed and labeled datasets ready for ML modeling.
 
-ML Model Training
+## ML Model Training: 
+
 Feature vectors extracted include: FFT coefficients, recurrence counts, temporal flags, and contextual anomaly scores.
-
 Models used:
-
+```bash
 Random Forest Classifier
 
 Support Vector Machine (RBF Kernel)
 
 Decision Tree
-
+```
 Performance metrics including accuracy, precision, recall, and F1-score are included in the final report.
 
 
